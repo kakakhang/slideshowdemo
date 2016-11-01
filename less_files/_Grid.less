@@ -1,0 +1,51 @@
+@import "Style.less";
+
+/* -- Grouping --*/
+.row {
+    zoom: 1;
+}
+.row:before,
+.row:after {
+    content:"";
+    display:table;
+}
+.row:after {
+    clear:both;
+}
+
+/* -- Column setup --*/
+.col {
+    display: block;
+    float:left;
+    margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*-- Grid of 2 -- */
+.span-1-of-2 {
+    width: 49.2%;
+}
+
+@media screen  and (max-width: 1200px) {
+
+}
+
+@media screen  and (max-width: 1023px) {
+
+}
+
+@media screen and (max-width: 767px){
+    .col:first-child { 
+        margin-left: 1.6%;
+	}
+    .span-1-of-2 {
+        width: 98%;
+        padding: 2%
+    }
+}
+
+@media screen  and (max-width: 480px ){
+    .col:first-child, .col { 
+        margin: 0;
+	}
+}

@@ -1,0 +1,41 @@
+@import "Style.less";
+
+
+/*-- Reset all element --*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color: @white;
+    color:@gray;
+    /*-- Default font for site --*/
+    font-family: 'Lato', 'Arial', 'sans-serif';
+    font-weight: @default-font-weight;
+    font-size: @default-font-size;
+    text-rendering: optimizeLegibility;
+}
+/*-----------------------------------------------*/
+/* -- Reusable component --*/
+/*-----------------------------------------------*/
+
+section{
+    padding: 40px 0;
+}
+
+h1{
+    font-size: @title-font-size;
+    text-align: center;
+    margin-bottom: @title-margin;
+}
+
+h1:after{
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: @light-blue;
+    margin: 0 auto;
+    margin-top: @title-margin;
+    content: " ";
+}

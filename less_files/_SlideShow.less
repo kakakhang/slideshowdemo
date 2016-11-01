@@ -1,0 +1,49 @@
+@import "Style.less";
+
+.slideshow {
+    position:relative;
+    width: 100%;
+    img {
+        position:absolute;
+        left:0;
+        top:0;
+        width: 100%;
+    }
+    
+    .btn-nav {
+        position: absolute;
+        z-index:20;
+        cursor: pointer;
+        background: @black;
+        color: @white;
+        opacity: 0.5;
+        padding: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .btn-prev {left: 0;}
+
+    .btn-next {right: 0}
+    
+    .index-indicator {
+        position: absolute;
+        bottom: 0;
+        z-index: 20;
+        li {
+            list-style: none;
+            float: left;
+            display: inline-block;
+            padding: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: @white;
+        }
+        a:hover {
+            color: @light-orange;
+        }
+        .active {
+            color: @light-orange;
+        }
+    }
+}

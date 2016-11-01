@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Slideshow demo</title>
+        <link href="vendor/css/normalize.css" type="text/css" rel="stylesheet">
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body> 
+    <section>
+        <div class="row">
+            <h1>Slide Show ( Support IE8, Responsive, Mobile Swipe )</h1>
+        </div>
+        <div class="row">
+            <div class="col span-1-of-2">
+                <div id='s1'>
+                    <img  src="images/lisbon-3.jpg" >
+                    <img  src="images/berlin.jpg" >
+                    <img  src="images/london.jpg">
+                </div>
+            </div>
+             <div class="col span-1-of-2">
+                <div id='s2'>
+                    <img  src="images/london.jpg">
+                    <img  src="images/berlin.jpg" >
+                    <img  src="images/lisbon-3.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="js/slideshow.js"></script>
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //Raise events that external Javascript contexts can subscribe to
+            function onChangeSlide(prev,current) {
+                alert('prev index : '+ prev + ' | current index: '+ current);
+            }
+
+            $('#s1').khangSlideShow({ height: '300px' , onChangeSlide: onChangeSlide });
+            $('#s2').khangSlideShow();
+            
+            // Ability to add or remove slides on the fly
+            setTimeout(function(){
+                $('#s2').data('khangSlideShow').addSlideshowItem('<img src="images/san-francisco.jpg">');
+            },3000);
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,123 @@
+/*-- Reset all element --*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background-color: #ffffff;
+  color: #555555;
+  /*-- Default font for site --*/
+  font-family: 'Lato', 'Arial', 'sans-serif';
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+/*-----------------------------------------------*/
+/* -- Reusable component --*/
+/*-----------------------------------------------*/
+section {
+  padding: 40px 0;
+}
+h1 {
+  font-size: 180%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+h1:after {
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #2980b9;
+  margin: 0 auto;
+  margin-top: 30px;
+  content: " ";
+}
+/* -- Grouping --*/
+.row {
+  zoom: 1;
+}
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+/* -- Column setup --*/
+.col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+}
+.col:first-child {
+  margin-left: 0;
+}
+/*-- Grid of 2 -- */
+.span-1-of-2 {
+  width: 49.2%;
+}
+@media screen and (max-width: 767px) {
+  .col:first-child {
+    margin-left: 1.6%;
+  }
+  .span-1-of-2 {
+    width: 98%;
+    padding: 2%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .col:first-child,
+  .col {
+    margin: 0;
+  }
+}
+.slideshow {
+  position: relative;
+  width: 100%;
+}
+.slideshow img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.slideshow .btn-nav {
+  position: absolute;
+  z-index: 20;
+  cursor: pointer;
+  background: #000000;
+  color: #ffffff;
+  opacity: 0.5;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+.slideshow .btn-prev {
+  left: 0;
+}
+.slideshow .btn-next {
+  right: 0;
+}
+.slideshow .index-indicator {
+  position: absolute;
+  bottom: 0;
+  z-index: 20;
+}
+.slideshow .index-indicator li {
+  list-style: none;
+  float: left;
+  display: inline-block;
+  padding: 5px;
+}
+.slideshow .index-indicator a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.slideshow .index-indicator a:hover {
+  color: #ecb858;
+}
+.slideshow .index-indicator .active {
+  color: #ecb858;
+}
